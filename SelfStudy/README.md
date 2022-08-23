@@ -4,7 +4,7 @@
 ## **Python Study basic**
 <br>
 
->##  [자료형](https://github.com/jong-seoung/Python/blob/main/SelfStudy/dataType.py)
+>##  [chapter1. 자료형](https://github.com/jong-seoung/Python/blob/main/SelfStudy/dataType.py)
 
 <details>
 <summary>세부 내용</summary>
@@ -72,7 +72,7 @@ print(name + "는 어른일까요?" + str(is_adult))
 
 <br>
 
->##  [연산자](https://github.com/jong-seoung/Python/blob/main/SelfStudy/operatorEx.py)
+>##  [chapter2. 연산자](https://github.com/jong-seoung/Python/blob/main/SelfStudy/operatorEx.py)
 <details>
 <summary>세부 내용</summary>
 <div markdown="1">
@@ -154,7 +154,7 @@ print(randint(1,45)) # 1부터 45이하의 값을 생성해줌
 </details>
 <br>
 
->##  [문자열 처리](https://github.com/jong-seoung/Python/blob/main/SelfStudy/stringEx.py)
+>##  [chapter3. 문자열 처리](https://github.com/jong-seoung/Python/blob/main/SelfStudy/stringEx.py)
 
 <details>
 <summary>세부 내용</summary>
@@ -269,7 +269,7 @@ http://naver.com
 
 <br>
 
->##  [자료구조](https://github.com/jong-seoung/Python/blob/main/SelfStudy/datastructure.py)
+>##  [chapter4. 자료구조](https://github.com/jong-seoung/Python/blob/main/SelfStudy/datastructure.py)
 
 <details>
 <summary>세부 내용</summary>
@@ -456,7 +456,7 @@ print(menu, type(menu))
 
 <br>
 
->##  [제어문](https://github.com/jong-seoung/Python/blob/main/SelfStudy/ControlStatement.py)
+>##  [chapter5. 제어문](https://github.com/jong-seoung/Python/blob/main/SelfStudy/ControlStatement.py)
 
 <details>
 <summary>세부 내용</summary>
@@ -572,6 +572,139 @@ print(students)
 ...
 [ ] 50번째 손님 (소요시간 : 45분)
 총 탑승 승객 : 2분
+```
+</div>
+</details>
+<br>
+
+>##  [chapter6. 자료형](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Function.py)
+
+<details>
+<summary>세부 내용</summary>
+<div markdown="1">
+
+>함수
+
+```
+def opena_ccount():
+    print("새로운 계좌가 생성되었습니다.")
+opena_ccount()
+```
+> 전달값과 반환 값
+```
+#입금
+def deposite(balance,money):
+    print("입금이 완료되었습니다. 잔액은{0}원 입니다.".format(balance+money))
+    return balance+money
+
+#출금
+def withdraw(balance, money):
+    if balance >= money:  #잔액이 출금보다 많으면
+        print("출금이 완료 되었습니다. 잔액은 {0}원입니다.".format(balance-money))
+        return balance - money
+    else:
+        print("잔액이 부족합니다. 남은 잔액은 {0}입니다.".format(balance))
+
+#출금 수수료
+def withdraw_night(balance, money):
+    commission = 100 #수수료100원
+    return commission, balance - money - commission
+balance =  0  #잔액
+
+#1000원 입금
+balance = deposite(balance,1000)
+
+#500원 출금
+balance = withdraw(balance, 500)
+
+#저녘에는 수수료가 제외되고 출금되게
+commission, balance = withdraw_night(balance, 300)
+print("수수료는 {0}이며, 잔액은 {1}원 입니다.".format(commission, balance))
+
+#1000원 출금 / 잔액이 부족할 경우
+balance = withdraw(balance, 1000)
+```
+> 기본 값
+```
+def profile(name, age, main_lang):
+    print("이름: {0}\t 나이: {1}\t 주 사용 언어: {2}"\
+        .format(name,age,main_lang))
+
+profile("유재석", 20, "파이썬")
+profile("김태호", 27, "자바")
+
+#같은 나이 같은 학년 같은반 같은수업
+def profile(name, age=17, main_lang="파이썬"):
+    print("이름: {0}\t 나이: {1}\t 주 사용 언어: {2}"\
+        .format(name,age,main_lang))
+
+profile("유재석")
+profile("김태호")
+```
+> 키워드 값
+```
+def profile(name, age, main_lang):
+    print(name, age, main_lang)
+
+profile(name="유재석", main_lang="파이썬", age=20)
+profile(name="김태호", age=20, main_lang="파이썬")
+#순서가 뒤 섞여 있어도 함수가 잘 전달됨
+
+#가변인자 
+# *을 사용하여 변수 선언 해주기
+def profile(name,age,*language):
+    print("이름: {0} \t나이: {1}\t".format(name,age),end="")
+    for lang in language:
+        print(lang, end=" ")
+    print()
+
+profile("유재석",20,"파이썬","자바","c","c++")
+profile("김태호",15,"파이썬","자바","","")
+``` 
+>지역변수와 전역변수
+```
+gun = 10
+
+def checkpoint(soldiers): #경계근무
+    global gun #전역 공간에 있는 gun을 사용
+    gun=gun - soldiers
+    print("[함수 내] 남은 총 : {0}".format(gun))
+
+print("전체 총 : {0}".format(gun))
+checkpoint(2) #2명이 경계 근무를 나감
+print("남은 총 : {0}".format(gun))
+
+#return 사용
+gun = 10
+
+def checkpoint_ret(gun, soldiers): #경계근무
+    gun = gun - soldiers
+    print("[함수 내] 남은 총 : {0}".format(gun))
+    return gun
+
+print("전체 총 : {0}".format(gun))
+gun = checkpoint_ret(gun, 2)
+print("남은 총 : {0}".format(gun))
+```
+
+> [퀴즈#6](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%236.py)
+```
+표준 체중을 구하는 프로그램을 작성하시오
+
+* 표준 체중 : 각 개인의 키에 적당한 체중
+
+(성별에 따른 공식)
+남자 : 키(m) X 키(m) x 22
+여자 : 남자 : 키(m) X 키(m) x 21
+
+조건1 : 표준 체중은 별도의 함수 내에서 계산
+        * 함수명 : std_weight
+        * 전달값 : 키(height), 성별(gender)
+
+조건2 :  표준 체중은 소수점 둘째자리 까지 표시
+
+출력 예제
+키 175cm의 남자의 표준 체중은 67.38kg입니다.
 ```
 </div>
 </details>

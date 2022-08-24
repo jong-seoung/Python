@@ -15,7 +15,7 @@
 # 출력 예제
 # 키 175cm의 남자의 표준 체중은 67.38kg입니다.
 
-내가 푼 방법
+#내가 푼 방법
 def std_weight(height,gender):
     if gender == "남자":
         print("키 {0}cm의 {1}의 표준 체중은 {2}kg입니다.".format(height,gender,round(height * height * 22 / 10000,2)))

@@ -577,7 +577,7 @@ print(students)
 </details>
 <br>
 
->##  [chapter6. 자료형](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Function.py)
+>##  [chapter6. 함수](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Function.py)
 
 <details>
 <summary>세부 내용</summary>
@@ -851,6 +851,384 @@ with open("study.txt","r",encoding="utf-8") as study_file:
 
  1주차부터 50주차까지의 보고서 파일을 만드는 프로그램을 작성하시오.
 ```
+</div>
+</details>
+
+<br>
+
+>##  [chapter8. 클래스](https://github.com/jong-seoung/Python/blob/main/SelfStudy/InputOutput.py)
+
+<details>
+<summary>세부 내용</summary>
+<div markdown="1">
+
+> 클래스
+
+```
+# 마린 : 공격 유닛, 군인, 총을 쏠 수 있음
+from ast import Pass
+
+
+name = "마린"
+hp = 40
+damage = 5
+
+print("{} 유닛이 생성되었습니다".format(name))
+print("체력은 {0}, 공격력{1}\n".format(hp, damage))
+
+# 탱크 : 공격 유닛, 탱크, 포를 쏠 수 있는데, 일반모드/ 시즈모드가 있음
+tank_name = "탱크"
+tank_hp= 150
+tank_damage = 35
+
+tank2_name =  "탱크"
+tank2_hp= 150
+tank2_damage = 35
+
+print("{} 유닛이 생성되었습니다".format(tank_name))
+print("체력은 {0}, 공격력{1}\n".format(tank_hp, tank_damage))
+
+def attack(name, location, damage):
+    print("{0} : {1} 방향으로 적군을 공격합니다. [공격력{2}]".format(name,location,damage))
+
+attack(name,"1시",damage)
+attack(tank_name,"1시",tank_damage)
+attack(tank2_name,"1시",tank2_damage)
+```
+> __int__
+```
+class Unit:
+    def __init__(self, name, hp, damage): # __init__ 
+        self.name = name
+        self.hp = hp
+        self.damage = damage
+        print("{} 유닛이 생성되었습니다".format(self.name))
+        print("체력은 {0}, 공격력{1}".format(self.hp, self.damage))
+
+marine1 = Unit("마린",40, 5)
+marine2 = Unit("마린",40, 5)
+tank = Unit("탱크",150, 35)
+```
+> 멤버변수
+```
+# 레이스 : 공중 유닛, 비행기, 클로킹(상대방에게 보이지 않음)
+wraith1 = Unit("레이스", 80,5)
+print("유닛이름 : {0}, 공격력 : {1}".format(wraith1.name,wraith1.damage))
+
+# 마인드 컨트롤 : 상대방 유닛을 내것으로 만드는것 (빼앗음)
+wraith2 = Unit("레이스", 80, 5)
+wraith2.clocking = True
+
+if wraith2.clocking == True:
+    print("{0} 는 현재 클로킹 상태입니다.".format(wraith2.name))
+
+# if wraith2.clocking == True:
+#     print("{0} 는 현재 클로킹 상태입니다.".format(wraith2.name))  / wraith1은 클로킹 상태가 아니기때문에 오류가 뜸
+```
+> 메소드 
+```
+class Unit:
+    def __init__(self, name, hp, damage): # __init__ 
+        self.name = name
+        self.hp = hp
+        self.damage = damage
+        print("{} 유닛이 생성되었습니다".format(self.name))
+        print("체력은 {0}, 공격력{1}".format(self.hp, self.damage))
+
+class AttackUnit:
+    def __init__(self, name, hp, damage):
+        self.name = name
+        self.hp = hp
+        self.damage = damage
+
+    def Attack(self,location):
+        print("{0} : {1} 방향으로 적군을 공격합니다. [공격력 {2}]".format(self.name, location, self.damage))
+
+    def damaged(self,damage):
+        print("{0} : {1} 데미지를 입었습니다.".format(self.name, damage))
+        self.hp -= damage
+        print("{0} : {1} 현재 체력은 {1}입니다.".format(self.name, self.hp))
+        if self.hp <= 0:
+            print("{0} : 파괴되었습니다.".format(self.name))
+
+#파이어뱃 : 공격유닛, 화염방사기
+firebat1 = AttackUnit("파이어뱃", 50, 16)
+firebat1.Attack("5시")
+
+#공격을 2번 받는다고 가장
+firebat1.damaged(25)
+firebat1.damaged(25)
+``` 
+> 상속
+```
+class Unit:
+    def __init__(self, name, hp, speed): # __init__ 
+        self.name = name
+        self.hp = hp
+        self.speed = speed
+
+    def move(self, location):
+        print("[지상 유닛 이동]")
+        print("{0} : {1} 방향으로 이동합니다. [속도 {2}]".format(self.name, location, self.speed))
+
+class AttackUnit(Unit):
+    def __init__(self, name, hp, damage,speed):
+        Unit.__init__(self, name, hp,speed) # Unit의 클래스를 상속 받아서 사용
+
+        # self.name = name
+        # self.hp = hp
+        self.damage = 
+```
+> 다중상속
+```
+#날수있는 기능을 가진 클라스
+class Flyable:
+    def __init__(self, flying_speed):
+        self.fly_speed = flying_speed
+
+    def fly(self, name, location):
+        print("{0} : {1} 방향으로 날아갑니다. [속도 {2}]".format(name, location, self.fly_speed))
+
+# 공중 공격 유닛 클래스
+class FlyableAttackUnit(AttackUnit, Flyable):
+    def __init__(self, name, hp, damage, fly_speed):
+        AttackUnit.__init__(self, name, hp, 0, damage) # 지상 speed = 0
+        Flyable.__init__(self, fly_speed)
+
+    def move (self, location):
+        print("[공중 유닛 이동]")
+        self.fly(self.name, location)
+
+#발키리 : 공중유닛, 한번에 14발 미사일 발사
+valkyrie = FlyableAttackUnit("발키리", 200, 6, 5)
+valkyrie.fly(valkyrie.name , "3시")
+
+# 벌쳐 : 지상 유닛, 기동성이 좋음
+vulture= AttackUnit("벌쳐", 80, 10, 20)
+
+#배틀크루저 : 공중 유닛, 체력도 굉장히 좋음, 공격력도 좋음
+battlecruiser = FlyableAttackUnit("배틀크루저", 500,25,3)
+
+vulture.move("11시")
+battlecruiser.move("9시")
+```
+> 메소드 오버라이딩 , pass
+```
+#건물
+class BuildingUnit(Unit):
+    def __init__(self, name, hp, location):
+        Pass
+
+# 서플라이 디폿 : 건물, 1개 건물 = 8유닛
+supply_depot = BuildingUnit("서플라이 디폿", 500, "7시")
+
+def game_start():
+    print("[알림] 새로운 게임을 시작합니다.")
+
+def game_over():
+    pass
+
+game_start()
+game_over()
+
+#super
+
+class BuildingUnit(Unit):
+    def __init__(self, name, hp, location):
+        # Unit.__init__(self,name,hp,0)
+        super().__init__(name,hp,0) #다중 상속을 받을경우 마지막에 상속받는 클라쓰에 대해서만 임의 상수가 호출됨
+        self.location = location
+```
+> [스타크래프트 프로젝트](https://github.com/jong-seoung/Python/blob/main/SelfStudy/StarCraft.py)
+
+<details>
+<summary>세부 내용</summary>
+<div markdown="1">
+
+```
+# 일반 유닛
+from random import randint
+
+
+class Unit:
+    def __init__(self, name, hp, speed): 
+        self.name = name
+        self.hp = hp
+        self.speed = speed
+        print("{} 유닛이 생성되었습니다".format(self.name))
+
+    def move(self, location):
+        print("[지상 유닛 이동]")
+        print("{0} : {1} 방향으로 이동합니다. [속도 {2}]".format(self.name, location, self.speed))
+
+    def damaged(self,damage):
+        print("{0} : {1} 데미지를 입었습니다.".format(self.name, damage))
+        self.hp -= damage
+        print("{0} : {1} 현재 체력은 {1}입니다.".format(self.name, self.hp))
+        if self.hp <= 0:
+            print("{0} : 파괴되었습니다.".format(self.name))
+
+#공격 유닛
+class AttackUnit(Unit):
+    def __init__(self, name, hp, damage,speed):
+        Unit.__init__(self, name, hp,speed) # Unit의 클래스를 상속 받아서 사용
+
+        # self.name = name
+        # self.hp = hp
+        self.damage = damage
+
+    def Attack(self,location):
+        print("{0} : {1} 방향으로 적군을 공격합니다. [공격력 {2}]".format(self.name, location,self.damage))
+
+    def damaged(self,damage):
+        print("{0} : {1} 데미지를 입었습니다.".format(self.name, damage))
+        self.hp -= damage
+        print("현재 {0}의 체력은 {1}입니다.".format(self.name,self.hp))
+        if self.hp <= 0:
+            print("{0} : 파괴되었습니다.".format(self.name))
+
+# 날 수 있는 기능을 가진 클래스
+class Flyable:
+    def __init__(self, flying_speed):
+        self.fly_speed = flying_speed
+
+    def fly(self, name, location):
+        print("{0} : {1} 방향으로 날아갑니다. [속도 {2}]".format(name, location, self.fly_speed))
+
+# 공중 공격 유닛 클래스
+class FlyableAttackUnit(AttackUnit, Flyable):
+    def __init__(self, name, hp, damage, fly_speed):
+        AttackUnit.__init__(self, name, hp, 0, damage) # 지상 speed = 0
+        Flyable.__init__(self, fly_speed)
+
+    def move (self, location):
+        print("[공중 유닛 이동]")
+        self.fly(self.name, location)
+
+# 마린
+class Marine(AttackUnit):
+    def __init__(self):
+        AttackUnit.__init__(self,"마린",40,1,5)
+
+    #스팀팩 : 일정시간동안 이동 및 공격 속도를 증가, 체력 10감소
+    def stimpack(self):
+        if self.hp >=10:
+            self.hp -= 10
+            print("{0} : 스팀팩을 사용합니다.(HP 10감소)".format(self.name))
+        else:
+            print("{0} : 스팀팩을 사용할수 없습니다.(최소 HP : 10)".format(self.name))
+
+#탱크
+class Tank(AttackUnit):
+    # 시즈모드 : 탱크를 지상에 고정시켜, 더 높은 파워로 공격 가능. 이동불가.
+    seize_developed = False # 시즈모드 개발여부
+
+    def __init__(self):
+        AttackUnit.__init__(self, "탱크", 150, 35, 2)
+        self.seize_developed = False
+
+    def set_seize_developed(self):
+        if Tank.seize_developed == False:
+            return
+        
+        #현재 시즈모드가 아닐때 --> 시즈모드
+        if self.seize_developed == False:
+            print("{0} : 시즈모드로 전환합니다.".format(self.name))
+            self.damage *= 2
+            self.seize_mode = True
+
+        #현재 시즈모드 일때, 시즈 모드 해제
+        else:
+            print("{0} : 시즈모드로 해제합니다.".format(self.name))
+            self.damage /= 2
+            self.seize_mode = False
+        
+#레이스
+class Wraith(FlyableAttackUnit):
+    def __init__(self):
+        FlyableAttackUnit.__init__(self,"레이스",80,5,2)
+        self.clocked = False # 클로킹 모드 (해제 상태)
+    
+    def clocking(self):
+        if self.clocked == True:  #클로킹 모드 --> 모드 해제
+            print("{0} : 클로킹 모드를 해제 합니다.".format(self.name))
+            self.clocked = False
+        else:
+            print("{0} : 클로킹 모드를 시작 합니다.".format(self.name))
+            self.clocked = True
+
+def game_start():
+    print("[알림] 새로운 게임을 시작합니다.")
+
+def game_over():
+    print("Player :  GG")
+    print("[Player]님이 퇴장하셨습니다.")
+
+game_start()
+#마린 3기 생성
+m1= Marine()
+m2= Marine()
+m3= Marine()
+
+#탱크 2기 생성
+t1=Tank()
+t2=Tank()
+
+#레이스 1기 생성
+w1 = Wraith()
+
+#유닛 일괄 관리 (생성된 모든 유닛 append)
+Attack_Unit = []
+Attack_Unit.append(m1)
+Attack_Unit.append(m2)
+Attack_Unit.append(m3)
+Attack_Unit.append(t1)
+Attack_Unit.append(t2)
+Attack_Unit.append(w1)
+
+# 전군 이동
+for Unit in Attack_Unit:
+    Unit.move("1시")
+
+#탱크 시즈모드 개발
+Tank.seize_developed =True
+print("[알림] 탱크 시즈 모드 개발이 완료되었습니다.")
+
+#공격 모드 준비 (마린: 스팀팩, 탱크 : 시즈모드, 레이스 : 클로킹)
+for Unit in Attack_Unit:
+    if isinstance(Unit, Marine):
+        Unit.stimpack()
+    if isinstance(Unit, Tank):
+        Unit.set_seize_developed()
+    if isinstance(Unit, Wraith):
+        Unit.clocking()
+
+# 전군 공격
+for Unit in Attack_Unit:
+    Unit.Attack("1시")
+
+# 전군 피해
+for Unit in Attack_Unit:
+    Unit.damaged(randint(5,21)) #공격은 랜덤으로 받음(5~20)
+
+# 게임 종료
+game_over()
+```
+</div>
+</details>
+<br>
+
+> [퀴즈#8](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%238.py)
+```
+주어진 코드를 활용하여 부동산 프로그램을 작성하시오.
+
+(출력 예제)
+총 3대의 매물이 있습니다.
+강남 아파드 매매 10억 2010년
+마포 오피스텔 전세 5억 2007년
+송파 빌라 월세 500/50 2000년
+```
+
 </div>
 </details>
 

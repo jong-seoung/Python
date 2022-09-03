@@ -1,3 +1,4 @@
+from tkinter import CENTER
 import pygame
 import os
 
@@ -55,9 +56,9 @@ ball_images = [
     pygame.image.load(os.path.join(image_path, "ball3.png"))]
 
 #공 크기에 따른 최초 스피드
-ball_speed_y = [-18, -15, -12, -9]
+ball_speed_y = [-17, -15, -12, -9]
 
-# 공들
+# 공들 
 balls = []
 
 balls.append({
@@ -71,6 +72,17 @@ balls.append({
 # 사라질 무기, 공 정보 저장 변수
 weapon_to_remove = -1
 ball_to_remove = -1
+
+
+# 폰트 정의
+game_font = pygame.font.Font(None, 40) # 폰트 객체 생성(폰트, 크기)
+
+# 게임 시간
+total_time = 100
+start_ticks =pygame.time.get_ticks()
+
+#게임 종료 메시지
+game_result = "GAME OVER"
 
 running = True #게임이 진행중인가?
 while running:
@@ -221,9 +233,25 @@ while running:
         ball_img_idx = val ["img_idx"]
         screen.blit(ball_images[ball_img_idx],(ball_pos_x , ball_pos_y))
     screen.blit(stage, (0,screen_height - stage_height))
+    
     screen.blit(character, (character_x_pos,character_y_pos))
+    #경과 시간 계산
+    elapsed_time = (pygame.time.get_ticks() - start_ticks) / 1000
+    timer = game_font.render("Time : {}".format(int(total_time - elapsed_time)),True,(255,255,255))
+
+
+    # 시간 초과했다면
+    if total_time - elapsed_time < 0:
+        game_result = "TIME OVER"
+        running = False
+    pygame.display.update() #게임화면을 다시 그리기
+
+#게임 오버 메시지
+msg = game_font.render(game_result,True,(255,255,0))
+msg_rect = msg.get_rect(CENTER=(int(screen_width /2 ),int(screen_height / 2)))
+
+pygame.display.update()
     
     
     
 
-    pygame.display.update()

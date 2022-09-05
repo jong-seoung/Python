@@ -1,9 +1,8 @@
-from tkinter import CENTER
 import pygame
 import os
 
 pygame.init() 
- 
+
 # 화면 크기 설정
 screen_width = 640  # 가로 크기
 screen_height = 480 # 세로 크기
@@ -56,9 +55,9 @@ ball_images = [
     pygame.image.load(os.path.join(image_path, "ball3.png"))]
 
 #공 크기에 따른 최초 스피드
-ball_speed_y = [-17, -15, -12, -9]
+ball_speed_y = [-18, -15, -12, -9]
 
-# 공들 
+# 공들
 balls = []
 
 balls.append({
@@ -73,17 +72,6 @@ balls.append({
 weapon_to_remove = -1
 ball_to_remove = -1
 
-
-# 폰트 정의
-game_font = pygame.font.Font(None, 40) # 폰트 객체 생성(폰트, 크기)
-
-# 게임 시간
-total_time = 100
-start_ticks =pygame.time.get_ticks()
-
-#게임 종료 메시지
-game_result = "GAME OVER"
-
 running = True #게임이 진행중인가?
 while running:
 
@@ -94,7 +82,7 @@ while running:
     for event in pygame.event.get():  # 어떤 이벤트가 발생하였는가
         if event.type == pygame.QUIT:  # 창이 닫히는 이벤트가 발생하였는가?
             running = False  # 게임이 진행중이 아님
-        
+
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 character_to_x -= character_speed
@@ -104,12 +92,12 @@ while running:
                 weapon_x_pos = character_x_pos + (character_width/2) -(weapon_width/2)
                 weapon_y_pos = character_y_pos
                 weapons.append([weapon_x_pos,weapon_y_pos])
-        
+
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                 character_to_x  = 0
 
-        
+
     if character_x_pos < 0:
             character_x_pos = 0
     elif character_x_pos > screen_width - character_width:
@@ -147,8 +135,8 @@ while running:
     character_rect= character.get_rect()
     character_rect.left = character_x_pos
     character_rect.top = character_y_pos
-    
-    
+
+
     for ball_idx, ball_val in enumerate(balls):
         ball_pos_x = ball_val["pos_x"]
         ball_pos_y = ball_val["pos_y"]
@@ -176,20 +164,20 @@ while running:
         if weapon_reck.colliderect(ball_rect):
             weapon_to_remove = weapon_idx #해당무기 없애기 위한 값 설정
             ball_to_remove = ball_idx #해당 공 없애기 위한 값 설정
-        
+
         # 가장 작은 크기의 공이 아니라면 다음 단계의 공으로 나눠주기
             if ball_img_idx < 3 :
-                
+
                 #현재 공의 정보를 가지고옴
                 ball_width = ball_rect.size[0]
                 ball_height = ball_rect.size[1]
 
                 # 나눠진 공 정보
-                small_ball_rect = ball_images[ball_img_idx + 1].get_rect()
+                small_ball_rect  = ball_images[ball_img_idx + 1].get_rect()
                 small_ball_width = small_ball_rect[0]
                 small_ball_height = small_ball_rect[1]
 
-                
+
 
                 #튕겨나가는공
                 balls.append({
@@ -199,7 +187,7 @@ while running:
                     "to_x" :3, 
                     "to_y": -6,
                     "init_spd_y": ball_speed_y[ball_img_idx + 1 ]})
-            
+
                 balls.append({
                     "pos_x" : ball_pos_x + (ball_width/2) - (small_ball_width /2), #공의 x 좌표
                     "pos_y" : ball_pos_y + (ball_height/2) - (small_ball_height /2), #공의 Y 좌표
@@ -208,9 +196,9 @@ while running:
                     "to_y": -6,
                     "init_spd_y": ball_speed_y[ball_img_idx + 1 ]})        
 
-        
+
                 break
-        
+
     #충돌된 공 or 무기 없애기
     if ball_to_remove > -1:
         del balls[ball_to_remove]
@@ -233,25 +221,12 @@ while running:
         ball_img_idx = val ["img_idx"]
         screen.blit(ball_images[ball_img_idx],(ball_pos_x , ball_pos_y))
     screen.blit(stage, (0,screen_height - stage_height))
-    
     screen.blit(character, (character_x_pos,character_y_pos))
-    #경과 시간 계산
-    elapsed_time = (pygame.time.get_ticks() - start_ticks) / 1000
-    timer = game_font.render("Time : {}".format(int(total_time - elapsed_time)),True,(255,255,255))
 
 
-    # 시간 초과했다면
-    if total_time - elapsed_time < 0:
-        game_result = "TIME OVER"
-        running = False
-    pygame.display.update() #게임화면을 다시 그리기
 
-#게임 오버 메시지
-msg = game_font.render(game_result,True,(255,255,0))
-msg_rect = msg.get_rect(CENTER=(int(screen_width /2 ),int(screen_height / 2)))
 
-pygame.display.update()
-    
+    pygame.display.update()
     
     
 

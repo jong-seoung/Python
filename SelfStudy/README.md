@@ -4,13 +4,11 @@
 ## **Python Study basic**
 <br>
 
->##  [chapter1. 자료형](https://github.com/jong-seoung/Python/blob/main/SelfStudy/dataType.py)
+##  **[chapter1. 자료형](https://github.com/jong-seoung/Python/blob/main/SelfStudy/dataType.py)**
 
+**숫자형 자료형** 
 <details>
-<summary>세부 내용</summary>
-<div markdown="1">
-
-> 숫자형 자료형
+<summary>코드 보기</summary>
 
 ```
 print(5)
@@ -21,13 +19,27 @@ print("5+3")
 print(2*8)
 print(3*(3+1))
 ```
-> 문자형 자료형
+</details>
+<br>
+
+**문자형 자료형**
+
+<details>
+<summary>코드 보기</summary>
+
 ```
 print("나비")
 print("ㅋㅋㅋㅋㅋㅋㅋ")
 print("ㅋ"*9)
 ```
-> boolean 자료형 - 참과 거짓을 나타내줌
+</details>
+<br>
+
+**boolean 자료형** - 참과 거짓을 나타내줌
+
+<details>
+<summary>코드 보기</summary>
+
 ```
 print(5 > 10)
 print(5 < 10)
@@ -36,7 +48,13 @@ print(False)
 print(not True)
 print(not (5 > 10))
 ```
-> 변수
+</details>
+<br>
+
+**변수**
+<details>
+<summary>코드 보기</summary>
+
 ```
 animal = "강아지"
 name = "연탄이"
@@ -53,31 +71,29 @@ print("우리집" + animal + "이름은" + name + "에요.")
 print(name + "는" + str(age)+ "살이며," + hobby +"을 아주 좋아해요.")
 print(name + "는 어른일까요?" + str(is_adult))
 ``` 
-> 주석
+</details>
+<br>
+
+**주석**
 ```
 # 주석 처리 하는법
 ```
-> [퀴즈#1](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz1.py)
+**[퀴즈#1](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz1.py)**
 ```
 변수를 이용하여 다음 문장을 출력하시오
-
 변수명 : station
-
 변수 값 : "사당", "신도림", "인천공항" 순서대로 입력
-
 출력 문장 : OO 행 열차가 들어 오고 있습니다.
 ```
-</div>
-</details>
 
 <br>
 
->##  [chapter2. 연산자](https://github.com/jong-seoung/Python/blob/main/SelfStudy/operatorEx.py)
-<details>
-<summary>세부 내용</summary>
-<div markdown="1">
+##  **[chapter2. 연산자](https://github.com/jong-seoung/Python/blob/main/SelfStudy/operatorEx.py)**
 
-> 연산자
+**연산자** - 제곱수, 나머지, 몫 구하는 방법 / and,or 연산자 사용법
+<details>
+<summary>코드 보기</summary>
+
 ```
 print(1+1) 
 print (3-2)
@@ -106,9 +122,14 @@ print((3 > 0) & (3 < 5)) # True
 #둘중 하나만 참이여도 참
 print((3>0) or (3>5)) # True
 print((3>0) | (3>5)) # True
-
 ```
-> 숫자 처리함수
+</details>
+<br>
+
+**숫자 처리함수** - 절대값, 제곱수, 최대값, 최소값, 반올림, 버림, 올림, 제곱근
+<details>
+<summary>코드 보기</summary>
+
 ```
 print(abs(-5)) # 절대값
 print(pow(4,2)) # 제곱수 4^2
@@ -121,8 +142,12 @@ print(floor(4.99)) # 버림
 print(ceil (3.14)) # 올림
 print(sqrt (16)) # 제곱근
 ```
+</details>
+<br>
 
-> 랜덤함수
+**랜덤함수** - 랜덤 함수 불러오는 방법
+<details>
+<summary>코드 보기</summary>
 
 ```
 from random import *
@@ -137,7 +162,10 @@ print(int(random() * 45 ) + 1 ) # 1부터 45이하의 임의의 값을 생성
 print(randrange(1,46)) # 1부터 45이하의 임의의 값을 생성
 print(randint(1,45)) # 1부터 45이하의 값을 생성해줌
 ```
-> [퀴즈#2](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%232.py)
+</details>
+<br>
+
+**[퀴즈#2](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%232.py)**
 ```
 당신은 최근에 코딩 스터디 모임을 새로 만들었습니다.
 월 4회 스터디를 하는데 3번은 온라인으로하고 1번은 오프라인으로 하기로 했습니다. 
@@ -150,19 +178,16 @@ print(randint(1,45)) # 1부터 45이하의 값을 생성해줌
 (출력문 예제)
 오프라인 스터터디 모임 날짜는 매월 X일로 선정되었습니다
 ```
-</div>
-</details>
+
 <br>
 
->##  [chapter3. 문자열 처리](https://github.com/jong-seoung/Python/blob/main/SelfStudy/stringEx.py)
+## **[chapter3. 문자열 처리](https://github.com/jong-seoung/Python/blob/main/SelfStudy/stringEx.py)**
 
+**문자열**
 <details>
-<summary>세부 내용</summary>
-<div markdown="1">
+<summary>코드 보기</summary>
 
-> 문자열
 ```
-# 문자열
 sentence = '나는 소년입니다'
 print(sentence)
 sentence2 = "파이썬은 쉬워요"
@@ -173,7 +198,13 @@ sentence3 = """
 """
 print(sentence3)
 ```
-> 슬라이싱
+</details>
+<br>
+
+**슬라이싱** - 처음부터 n번째자리까지의 값 가지고 오기, 뒤에서부터 n번째자리까지의 값 가지고오기
+<details>
+<summary>코드 보기</summary>
+
 ```
 jumin = "000516-1234567"
 
@@ -185,9 +216,15 @@ print("생년월일 : " + jumin[:6]) #처음부터 6자리 직전까지 가지�
 print("뒤 7자리 : " + jumin[7:]) # 7자리부터 끝까지
 print("뒤7자리 (뒤에서부터) : " + jumin[-7:] ) #맨뒤에 7번째부터 끝까지
 ```
+</details>
+<br>
 
-> 문자열처리함수
-```#문자열처리 함수
+**문자열처리함수** - 전부 소문자, 대문자 표시하는법 / 첫번째 자리 숫자가 대문자인지 / n이 있는 위치를 알아내는법 / 두번째 n이 있는 위치를 알아내는법 / 원하는 문자가 몇번 나오는지 알아내는법
+
+<details>
+<summary>코드 보기</summary>
+
+```
 Python = "Python is Amazing"
 print(Python.lower()) # 전부 소문자로 표시
 print(Python.upper()) # 전부 대문자로 표시
@@ -204,9 +241,14 @@ print(Python.find("n")) # index와 같은 역할을 하지만 원하는 글자�
 
 print(Python.count("n")) #n이 몇번 나오는지 알려줌
 ```
-> 문자열포맷
+</details>
+<br>
+
+**문자열포맷** - format함수 관련 
+<details>
+<summary>코드 보기</summary>
+
 ```
-#문자열 포멧
 print("a","b")
 print("a"+"b")
 
@@ -230,9 +272,14 @@ age = 20
 color = "빨간"
 print(f"나는 {age}살이며,{color}색을 좋아해요")
 ```
-> 탈출문자
+</details>
+<br>
+
+**탈출문자** - 줄바꿈, 커서이동, 벡스페이스, 탭 관련 코드 
+<details>
+<summary>코드 보기</summary>
+
 ```
-#탈출문자
 print("백문이 불여일견  \n 백견이 불여일타") # \n은 줄바꿈
 print("저는 '백종성' 입니다.")
 print('저는 "백종성" 입니다.')
@@ -250,7 +297,10 @@ print("Redd\bApple")
 # \t : 탭
 print("Red \t Apple")
 ```
-> [퀴즈#3](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%233.py)
+</details>
+<br>
+
+**[퀴즈#3](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%233.py)**
 ```
 사이트별로 비밀번호를 만들어 주는 프로그램을 작성하시오
 
@@ -264,18 +314,12 @@ http://naver.com
 생성된 비밀번호 예 : nav51!
 ```
 
-</div>
-</details>
+##  **[chapter4. 자료구조](https://github.com/jong-seoung/Python/blob/main/SelfStudy/datastructure.py)**
 
-<br>
-
->##  [chapter4. 자료구조](https://github.com/jong-seoung/Python/blob/main/SelfStudy/datastructure.py)
-
+**리스트** - [] 리스트 관련 명령어
 <details>
-<summary>세부 내용</summary>
-<div markdown="1">
+<summary>코드 보기</summary>
 
-> 리스트
 ```
 from traceback import print_tb
 
@@ -368,7 +412,13 @@ print(cabinet.items())
 cabinet.clear()
 print(cabinet)
 ```
-> 튜플
+</details>
+<br>
+
+**튜플** - () 튜플 관련 명령어
+<details>
+<summary>코드 보기</summary>
+
 ```
 menu = ("돈까스","치즈까스")
 print(menu[0])
@@ -385,9 +435,14 @@ print(name, age, hobby)
 (name, age, hobby) = ("김종국", 20, "코딩")
 print(name, age, hobby)
 ```
-> 세트
+</details>
+<br>
+
+**세트** {} 세트 관련 명령어
+<details>
+<summary>코드 보기</summary>
+
 ```
-# 세트 (set)
 # 중복이 안됨, 순서 없음
 my_set={1,2,3,3,3}
 print(my_set)
@@ -415,7 +470,13 @@ print(python)
 java.remove("김태호")
 print(java)
 ```
-> 자료구조의 변경
+</details>
+<br>
+
+**자료구조의 변경** - 자료 확인법, 자료구조 변경법
+<details>
+<summary>코드 보기</summary>
+
 ```
 #자료 구조 확인
 menu={"커피", "우유", "주스"}
@@ -433,7 +494,11 @@ print(menu, type(menu))
 menu= set(menu)
 print(menu, type(menu))
 ```
-> [퀴즈#4](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%234.py)
+</details>
+<br>
+
+**[퀴즈#4](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%234.py)**
+
 ```
 당신의 학교에서는 파이썬 코딩 대회를 추최합니다.
 참석률을 높이기 위해 댓글 이벤트를 진행하기로 하였습니다.
@@ -451,18 +516,15 @@ print(menu, type(menu))
 커피 당첨자 : [2,3,4]
 --축하합니다--
 ```
-</div>
-</details>
 
 <br>
 
->##  [chapter5. 제어문](https://github.com/jong-seoung/Python/blob/main/SelfStudy/ControlStatement.py)
+##  **[chapter5. 제어문](https://github.com/jong-seoung/Python/blob/main/SelfStudy/ControlStatement.py)**
 
+
+**if 문** 
 <details>
-<summary>세부 내용</summary>
-<div markdown="1">
-
-> if 문
+<summary>코드 보기</summary>
 
 ```
 if weather == "비" or weather == "눈" :
@@ -482,7 +544,13 @@ elif 0 <= temp < 10:
 else :
     print("너무 추워요 나가지마세요")
 ```
-> for 문
+</details>
+<br>
+
+**for 문**
+<details>
+<summary>코드 보기</summary>
+
 ```
 print("대기번호 : 1")
 print("대기번호 : 2")
@@ -499,7 +567,13 @@ starbuck = ["아이언맨", "토르", "아이엠 그루트"]
 for customer in starbuck :
     print("{0}, 커피가 준비되었습니다.".format(customer))
 ```
-> while 문
+</details>
+<br>
+
+**while 문** - while문 과 무한반복문
+<details>
+<summary>코드 보기</summary>
+
 ```
 customer = "토르"
 index = 5
@@ -525,8 +599,13 @@ while person != customer :
     print("{0},커피가 준비 되었습니다.".format(customer))
     person = input("이름이 어떻게 되세요?")
 ```
+</details>
+<br>
 
-> cntinue 와 break
+**cntinue 와 break**
+<details>
+<summary>코드 보기</summary>
+
 ```
 absent = [2,3] #결석
 no_book = [7] #책을 안가지고 옴
@@ -538,7 +617,13 @@ for student in range(1,11):
         break
     print("{0}야, 책읽어봐".format(student))
 ``` 
-> 한줄로 for 문
+</details>
+<br>
+
+**한줄로 for 문**
+<details>
+<summary>코드 보기</summary>
+
 ```
 #출석 번호가 1 2 3 4, 앞에 100을 붙이기로함 -> 101. 102 ,103, 104
 student = [1,2,3,4,5]
@@ -555,7 +640,10 @@ students=["Iron man", "Thor"]
 students= [i.upper() for i in students]
 print(students)
 ```
-> [퀴즈#5](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%235.py)
+</details>
+<br>
+
+**[퀴즈#5](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%235.py)**
 ```
 당신은 Cocoa 서비스를 이용하는 택시 기사님입니다.
 50명의 승객과 매칭 기회가 있을때, 총 탑승 승객수를 구하는 프로그램을 작성하시오.
@@ -573,24 +661,25 @@ print(students)
 [ ] 50번째 손님 (소요시간 : 45분)
 총 탑승 승객 : 2분
 ```
-</div>
-</details>
-<br>
 
->##  [chapter6. 함수](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Function.py)
+##  **[chapter6. 함수](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Function.py)**
 
+**함수** - 함수 정의하는법
 <details>
-<summary>세부 내용</summary>
-<div markdown="1">
-
->함수
+<summary>코드 보기</summary>
 
 ```
 def opena_ccount():
     print("새로운 계좌가 생성되었습니다.")
 opena_ccount()
 ```
-> 전달값과 반환 값
+</details>
+<br>
+
+**전달값과 반환 값**
+<details>
+<summary>코드 보기</summary>
+
 ```
 #입금
 def deposite(balance,money):
@@ -624,7 +713,13 @@ print("수수료는 {0}이며, 잔액은 {1}원 입니다.".format(commission, b
 #1000원 출금 / 잔액이 부족할 경우
 balance = withdraw(balance, 1000)
 ```
-> 기본 값
+</details>
+<br>
+
+**기본 값**
+<details>
+<summary>코드 보기</summary>
+
 ```
 def profile(name, age, main_lang):
     print("이름: {0}\t 나이: {1}\t 주 사용 언어: {2}"\
@@ -641,7 +736,13 @@ def profile(name, age=17, main_lang="파이썬"):
 profile("유재석")
 profile("김태호")
 ```
-> 키워드 값
+</details>
+<br>
+
+**키워드 값** - 가변인자
+<details>
+<summary>코드 보기</summary>
+
 ```
 def profile(name, age, main_lang):
     print(name, age, main_lang)
@@ -661,7 +762,13 @@ def profile(name,age,*language):
 profile("유재석",20,"파이썬","자바","c","c++")
 profile("김태호",15,"파이썬","자바","","")
 ``` 
->지역변수와 전역변수
+</details>
+<br>
+
+**지역변수와 전역변수**
+<details>
+<summary>코드 보기</summary>
+
 ```
 gun = 10
 
@@ -686,8 +793,10 @@ print("전체 총 : {0}".format(gun))
 gun = checkpoint_ret(gun, 2)
 print("남은 총 : {0}".format(gun))
 ```
+</details>
+<br>
 
-> [퀴즈#6](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%236.py)
+**[퀴즈#6](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%236.py)**
 ```
 표준 체중을 구하는 프로그램을 작성하시오
 
@@ -706,18 +815,14 @@ print("남은 총 : {0}".format(gun))
 출력 예제
 키 175cm의 남자의 표준 체중은 67.38kg입니다.
 ```
-</div>
-</details>
 
 <br>
 
->##  [chapter7. 입출력](https://github.com/jong-seoung/Python/blob/main/SelfStudy/InputOutput.py)
+##  **[chapter7. 입출력](https://github.com/jong-seoung/Python/blob/main/SelfStudy/InputOutput.py)**
 
+**표준 입출력** - 정렬 하는 방법
 <details>
-<summary>세부 내용</summary>
-<div markdown="1">
-
-> 표준 입출력
+<summary>코드 보기</summary>
 
 ```
 print("python","Java", sep=",")
@@ -748,7 +853,13 @@ answer = input("아무 값이나 입력하세요 : ")
 print("입력하신 값은 {0} 입니다.".format(answer))
 print(type(answer)) #사용자 입력을 통해 정해진 값은 항상 문자열 형태로 정해짐
 ```
-> 다양한 출력 포맷
+</details>
+<br>
+
+**다양한 출력 포맷** - 빈공간 확보, +-표시, 정렬, n자리마다 콤마, 소수점 출력
+<details>
+<summary>코드 보기</summary>
+
 ```
 # 빈자리는 빈 공간으로 두고, 오른쪽 정렬하되, 총 10자리 공간을 확보
 print("{0: >10}".format(500))
@@ -776,7 +887,13 @@ print("{0:f}".format(5/3))
 # 소수점 특정 자리수 까지만 표시
 print("{0:.2f}".format(5/3))
 ```
-> 파일 입출력
+</details>
+<br>
+
+**파일 입출력** - 파일 쓰기, 읽기, 덮어쓰기 관련 코드
+<details>
+<summary>코드 보기</summary>
+
 ```
 # "w"는 쓰기 용도
 score_file = open("score.txt","a",encoding= "utf-8") 
@@ -811,7 +928,13 @@ for line in lines:
     print(line, end="")
 score_file.close()
 ```
-> pickle
+</details>
+<br>
+
+**pickle**
+<details>
+<summary>코드 보기</summary>
+
 ```
 import pickle
 profile_file = open("profile.pickle","wb")
@@ -826,7 +949,13 @@ profile = pickle.load(profile_file)
 print(profile)
 profile_file.close
 ``` 
-> with
+</details>
+<br>
+
+**with** - 간편하게 파일을 읽고 쓰는법
+<details>
+<summary>코드 보기</summary>
+
 ```
 #파일을 읽고 쓰는데 두줄로 해결되고 매번 close를 사용하지 않아도 되서 좋음
 
@@ -839,30 +968,28 @@ with open("study.txt","w",encoding="utf-8") as study_file:
 with open("study.txt","r",encoding="utf-8") as study_file:
     print(study_file.read())
 ```
-> [퀴즈#7](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%237.py)
-```
- 당신의 회사에서는 매주 1회 작성해야 하는 보고서가 있습니다.
- 보고서는 항상 아래와 같은 형태로 출력되어야 합니다.
-
- - x 주차 주간보고 - 
- 부서 :
- 이름 :
- 업무 요약 :
-
- 1주차부터 50주차까지의 보고서 파일을 만드는 프로그램을 작성하시오.
-```
-</div>
 </details>
-
 <br>
 
->##  [chapter8. 클래스](https://github.com/jong-seoung/Python/blob/main/SelfStudy/InputOutput.py)
+**[퀴즈#7](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%237.py)**
+```
+당신의 회사에서는 매주 1회 작성해야 하는 보고서가 있습니다.
+보고서는 항상 아래와 같은 형태로 출력되어야 합니다.
 
+- x 주차 주간보고 - 
+부서 :
+이름 :
+업무 요약 :
+
+1주차부터 50주차까지의 보고서 파일을 만드는 프로그램을 작성하시오.
+```
+<br>
+
+##  **[chapter8. 클래스](https://github.com/jong-seoung/Python/blob/main/SelfStudy/InputOutput.py)**
+
+**클래스** - 클래스 설정
 <details>
-<summary>세부 내용</summary>
-<div markdown="1">
-
-> 클래스
+<summary>코드 보기</summary>
 
 ```
 # 마린 : 공격 유닛, 군인, 총을 쏠 수 있음
@@ -895,7 +1022,13 @@ attack(name,"1시",damage)
 attack(tank_name,"1시",tank_damage)
 attack(tank2_name,"1시",tank2_damage)
 ```
-> __int__
+</details>
+<br>
+
+**__init__** - 
+<details>
+<summary>코드 보기</summary>
+
 ```
 class Unit:
     def __init__(self, name, hp, damage): # __init__ 
@@ -909,7 +1042,13 @@ marine1 = Unit("마린",40, 5)
 marine2 = Unit("마린",40, 5)
 tank = Unit("탱크",150, 35)
 ```
-> 멤버변수
+</details>
+<br>
+
+**멤버변수**
+<details>
+<summary>코드 보기</summary>
+
 ```
 # 레이스 : 공중 유닛, 비행기, 클로킹(상대방에게 보이지 않음)
 wraith1 = Unit("레이스", 80,5)
@@ -925,7 +1064,13 @@ if wraith2.clocking == True:
 # if wraith2.clocking == True:
 #     print("{0} 는 현재 클로킹 상태입니다.".format(wraith2.name))  / wraith1은 클로킹 상태가 아니기때문에 오류가 뜸
 ```
-> 메소드 
+</details>
+<br>
+
+**메소드**
+<details>
+<summary>코드 보기</summary>
+
 ```
 class Unit:
     def __init__(self, name, hp, damage): # __init__ 
@@ -959,7 +1104,13 @@ firebat1.Attack("5시")
 firebat1.damaged(25)
 firebat1.damaged(25)
 ``` 
-> 상속
+</details>
+<br>
+
+**상속**
+<details>
+<summary>코드 보기</summary>
+
 ```
 class Unit:
     def __init__(self, name, hp, speed): # __init__ 
@@ -979,7 +1130,13 @@ class AttackUnit(Unit):
         # self.hp = hp
         self.damage = 
 ```
-> 다중상속
+</details>
+<br>
+
+**다중상속**
+<details>
+<summary>코드 보기</summary>
+
 ```
 #날수있는 기능을 가진 클라스
 class Flyable:
@@ -1012,7 +1169,13 @@ battlecruiser = FlyableAttackUnit("배틀크루저", 500,25,3)
 vulture.move("11시")
 battlecruiser.move("9시")
 ```
-> 메소드 오버라이딩 , pass
+</details>
+<br>
+
+**메소드 오버라이딩 , pass**
+<details>
+<summary>코드 보기</summary>
+
 ```
 #건물
 class BuildingUnit(Unit):
@@ -1039,11 +1202,12 @@ class BuildingUnit(Unit):
         super().__init__(name,hp,0) #다중 상속을 받을경우 마지막에 상속받는 클라쓰에 대해서만 임의 상수가 호출됨
         self.location = location
 ```
-> [스타크래프트 프로젝트](https://github.com/jong-seoung/Python/blob/main/SelfStudy/StarCraft.py)
+</details>
+<br>
 
+**[스타크래프트 프로젝트](https://github.com/jong-seoung/Python/blob/main/SelfStudy/StarCraft.py)**
 <details>
-<summary>세부 내용</summary>
-<div markdown="1">
+<summary>코드 보기</summary>
 
 ```
 # 일반 유닛
@@ -1214,11 +1378,10 @@ for Unit in Attack_Unit:
 # 게임 종료
 game_over()
 ```
-</div>
 </details>
 <br>
 
-> [퀴즈#8](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%238.py)
+**[퀴즈#8](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%238.py)**
 ```
 주어진 코드를 활용하여 부동산 프로그램을 작성하시오.
 
@@ -1229,18 +1392,14 @@ game_over()
 송파 빌라 월세 500/50 2000년
 ```
 
-</div>
-</details>
-
 <br>
 
->##  [chapter9. 예외 처리](https://github.com/jong-seoung/Python/blob/main/SelfStudy/exceptionHandling.py)
+##  **[chapter9. 예외 처리](https://github.com/jong-seoung/Python/blob/main/SelfStudy/exceptionHandling.py)**
 
+**예외 처리** - try, except 관련 코드
 <details>
-<summary>세부 내용</summary>
-<div markdown="1">
+<summary>코드 보기</summary>
 
->예외 처리
 ```
 try:
     print("나누기 전용 계산기입니다.")
@@ -1257,7 +1416,13 @@ except Exception as err:
     print("알 수 없는 오류가 발생하였습니다.")
     print(err)
 ```
-> 에러 발생 시키기
+</details>
+<br>
+
+**에러 발생 시키기** - 에러 발생시 원하는 동작 실행하는법
+<details>
+<summary>코드 보기</summary>
+
 ```
 try:
     print("한자리 숫자 나누기 전용 계산기입니다.")
@@ -1268,9 +1433,14 @@ try:
     print("{0} / {1} = {2}".format(num1,num2,int(num1/num2)))
 except ValueError:
     print("잘못된 값을 입력하였습니다. 한자리 숫자만 입력하세요.")
-
 ```
-> 사용자 정의 예외처리 / finally
+</details>
+<br>
+
+**사용자 정의 예외처리 / finally** - 에러 발생시 원하는 동작 실행하는법 / 마지막 동작 실행하는법 
+<details>
+<summary>코드 보기</summary>
+
 ```
 class BigNumberError(Exception):
     pass
@@ -1294,35 +1464,34 @@ except BigNumberError : # as err 출력하기 원하는 메시지를 나타내�
 finally:
     print("계산기를 이용해주셔서 감사합니다.")
 ```
-> [퀴즈#9](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%239.py)
-```
- 동네에 항상 대기 손님이 있는 맛있는 치킨집이 있습니다.
- 대기 손님의 치킨 요리 시간을 줄이고자 자동주문 시스템을 제작하였습니다
- 시스템 코드를 확인하고 적절한 예외처리 구문을 넣으시오
-
- 조건 1 : 1보다 작거나 숫자가 아닌 입력값이 들어올때는 ValueError로 처리
-          출력 메시지 : "잘못된 값을 입력하였습니다."
- 조건 2 : 대기 손님이 주물할수 있는 총 치킨량은 10마리로 한정
-          치킨 소진시 사용자 정의 에러[SoldOutError]를 발생 시키고 프로그램 종료
-          출력 메시지 : "재고가 소진되어 더 이상 주문을 받지 않습니다." 
-```
-</div>
 </details>
+<br>
+
+**[퀴즈#9](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%239.py)**
+```
+동네에 항상 대기 손님이 있는 맛있는 치킨집이 있습니다.
+대기 손님의 치킨 요리 시간을 줄이고자 자동주문 시스템을 제작하였습니다
+시스템 코드를 확인하고 적절한 예외처리 구문을 넣으시오
+
+조건 1: 1보다 작거나 숫자가 아닌 입력값이 들어올때는 ValueError로 처리
+        출력 메시지 : "잘못된 값을 입력하였습니다."
+조건 2: 대기 손님이 주물할수 있는 총 치킨량은 10마리로 한정
+        치킨 소진시 사용자 정의 에러[SoldOutError]를 발생 시키고 프로그램 종료
+        출력 메시지 : "재고가 소진되어 더 이상 주문을 받지 않습니다." 
+```
 
 <br>
 
->##  chapter10. 모듈과 패키지
+##  **chapter10. 모듈과 패키지** 
+- **모듈 : 하나의 파이썬 파일**
+- **패키지: 모듈이 여러개 모여있는 것**
+- **[모듈 과 패키지](https://github.com/jong-seoung/Python/tree/main/SelfStudy/theater_module)**
+(영화관 입장료 계산)
 
+**[내장함수 & 외장함수(os)](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Internal%2CExternalFunction.py)**
 <details>
-<summary>세부 내용</summary>
-<div markdown="1">
+<summary>코드 보기</summary>
 
-> [모듈 과 패키지](https://github.com/jong-seoung/Python/tree/main/SelfStudy/theater_module)
-
-```
-링크 참고 (영화관 입장료 계산)
-```
-> [내장함수 & 외장함수](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Internal%2CExternalFunction.py)
 ```
 # 내장 함수
 
@@ -1363,8 +1532,12 @@ today = datetime.date.today() #오늘의 날짜
 td = datetime.timedelta(days=100) #100일 저장
 print("우리가 만난지 100일은",today + td) #오늘로 부터 100일 뒤
 ```
+</details>
+<br>
 
-> [퀴즈#10](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%2310.py)
+**[퀴즈#10](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Quiz%2310.py)** 
+<br>
+**[퀴즈# 10모듈 파일](https://github.com/jong-seoung/Python/blob/main/SelfStudy/byme.py)**
 ```
 # 프로젝트 내에 나만의 시그니처를 남기는 모듈을 만드시오
 
@@ -1379,8 +1552,5 @@ print("우리가 만난지 100일은",today + td) #오늘로 부터 100일 뒤
 # 유튜브 :
 # 이메일 :
 ```
-> [퀴즈# 10모듈 파일](https://github.com/jong-seoung/Python/blob/main/SelfStudy/byme.py)
-</div>
-</details>
 
 <br>

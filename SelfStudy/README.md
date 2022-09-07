@@ -5,6 +5,8 @@
 <br>
 
 ##  **[chapter1. 자료형](https://github.com/jong-seoung/Python/blob/main/SelfStudy/dataType.py)**
+<details>
+<summary>상세 보기</summary>
 
 **숫자형 자료형** 
 <details>
@@ -85,10 +87,13 @@ print(name + "는 어른일까요?" + str(is_adult))
 변수 값 : "사당", "신도림", "인천공항" 순서대로 입력
 출력 문장 : OO 행 열차가 들어 오고 있습니다.
 ```
+</details>
 
 <br>
 
 ##  **[chapter2. 연산자](https://github.com/jong-seoung/Python/blob/main/SelfStudy/operatorEx.py)**
+<details>
+<summary>상세 보기</summary>
 
 **연산자** - 제곱수, 나머지, 몫 구하는 방법 / and,or 연산자 사용법
 <details>
@@ -178,10 +183,12 @@ print(randint(1,45)) # 1부터 45이하의 값을 생성해줌
 (출력문 예제)
 오프라인 스터터디 모임 날짜는 매월 X일로 선정되었습니다
 ```
-
+</details>
 <br>
 
 ## **[chapter3. 문자열 처리](https://github.com/jong-seoung/Python/blob/main/SelfStudy/stringEx.py)**
+<details>
+<summary>상세 보기</summary>
 
 **문자열**
 <details>
@@ -313,8 +320,12 @@ http://naver.com
 
 생성된 비밀번호 예 : nav51!
 ```
+</details>
+<br>
 
 ##  **[chapter4. 자료구조](https://github.com/jong-seoung/Python/blob/main/SelfStudy/datastructure.py)**
+<details>
+<summary>상세 보기</summary>
 
 **리스트** - [] 리스트 관련 명령어
 <details>
@@ -517,10 +528,12 @@ print(menu, type(menu))
 --축하합니다--
 ```
 
+</details>
 <br>
 
 ##  **[chapter5. 제어문](https://github.com/jong-seoung/Python/blob/main/SelfStudy/ControlStatement.py)**
-
+<details>
+<summary>상세 보기</summary>
 
 **if 문** 
 <details>
@@ -661,8 +674,12 @@ print(students)
 [ ] 50번째 손님 (소요시간 : 45분)
 총 탑승 승객 : 2분
 ```
+</details>
+<br>
 
 ##  **[chapter6. 함수](https://github.com/jong-seoung/Python/blob/main/SelfStudy/Function.py)**
+<details>
+<summary>상세 보기</summary>
 
 **함수** - 함수 정의하는법
 <details>
@@ -815,10 +832,12 @@ print("남은 총 : {0}".format(gun))
 출력 예제
 키 175cm의 남자의 표준 체중은 67.38kg입니다.
 ```
-
+</details>
 <br>
 
 ##  **[chapter7. 입출력](https://github.com/jong-seoung/Python/blob/main/SelfStudy/InputOutput.py)**
+<details>
+<summary>상세 보기</summary>
 
 **표준 입출력** - 정렬 하는 방법
 <details>
@@ -983,9 +1002,12 @@ with open("study.txt","r",encoding="utf-8") as study_file:
 
 1주차부터 50주차까지의 보고서 파일을 만드는 프로그램을 작성하시오.
 ```
+</details>
 <br>
 
 ##  **[chapter8. 클래스](https://github.com/jong-seoung/Python/blob/main/SelfStudy/InputOutput.py)**
+<details>
+<summary>상세 보기</summary>
 
 **클래스** - 클래스 설정
 <details>
@@ -1391,10 +1413,12 @@ game_over()
 마포 오피스텔 전세 5억 2007년
 송파 빌라 월세 500/50 2000년
 ```
-
+</details>
 <br>
 
 ##  **[chapter9. 예외 처리](https://github.com/jong-seoung/Python/blob/main/SelfStudy/exceptionHandling.py)**
+<details>
+<summary>상세 보기</summary>
 
 **예외 처리** - try, except 관련 코드
 <details>
@@ -1479,10 +1503,13 @@ finally:
         치킨 소진시 사용자 정의 에러[SoldOutError]를 발생 시키고 프로그램 종료
         출력 메시지 : "재고가 소진되어 더 이상 주문을 받지 않습니다." 
 ```
-
+</details>
 <br>
 
 ##  **chapter10. 모듈과 패키지** 
+<details>
+<summary>상세 보기</summary>
+
 - **모듈 : 하나의 파이썬 파일**
 - **패키지: 모듈이 여러개 모여있는 것**
 - **[모듈 과 패키지](https://github.com/jong-seoung/Python/tree/main/SelfStudy/theater_module)**
@@ -1553,4 +1580,5 @@ print("우리가 만난지 100일은",today + td) #오늘로 부터 100일 뒤
 # 이메일 :
 ```
 
+</details>
 <br>

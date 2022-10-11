@@ -6,19 +6,29 @@ python 공부를 한 내용을 정리한 레파지토리 입니다.
 
 <br>
 
-> ### 기본 코드 [(파일)](https://github.com/jong-seoung/Python/tree/main/SelfStudy)
-- chapter1. 자료형
-- chapter2. 연산자
-- chapter3. 문자열 처리
-- chapter4. 자료구조
-- chapter5. 제어문
-- chapter6. 함수
-- chapter7. 입출력
-- chapter8. 클래스
-- chapter9. 예외 처리
-- chapter10. 모듈과 패키지
+# 기본 코드
+파이썬의 기본적인 코드들을 공부한 내용입니다.
+### [기본 코드](https://github.com/jong-seoung/Python/tree/main/Basic_Code)
 
-> ### 게임개발 [(파일)](https://github.com/jong-seoung/Python/tree/main/GameDevelopment)
-- 게임 개발 기초 코드
-- 똥 피하기 게임
-- 오락실 팡 게임
+<br>
+
+# 게임개발 
+파이썬을 이용하여 게임을 만드는 기본 코드들과 똥피하기 게임, 팡 게임을 만든 내용입니다
+### [게임 개발 기본 코드 ](https://github.com/jong-seoung/Python/tree/main/GameDevelopment/pygame_basic)
+### [똥 피하기 게임](https://github.com/jong-seoung/Python/tree/main/GameDevelopment/Quiz_ddong)
+### [팡 게임](https://github.com/jong-seoung/Python/tree/main/GameDevelopment/Pang_Game)
+
+
+<br>
+
+# 티킨터 
+파이썬의 티킨터를 이용한 기본 코드들과 자동으로 사진을 합쳐주는 프로그램을 만든 내용입니다.
+### [티킨터 기본 코드](https://github.com/jong-seoung/Python/tree/main/GUI_Tkinter/GUI_basic)
+### [이미지 합성 프로그램](https://github.com/jong-seoung/Python/tree/main/GUI_Tkinter/GUI_Project)
+
+<br>
+
+# RPA
+파이썬을 이용한 업무자동화로 엑셀, 데스크탑 UI, 웹, 이메일을 자동화에 대해 공부한 내용과 프로젝트 내용입니다.
+### [엑셀 자동화](https://github.com/jong-seoung/Python/tree/main/RPA/Exel)
+

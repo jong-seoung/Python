@@ -1,4 +1,3 @@
-from urllib import request
 import requests
 res = requests.get("http://google.com")
 # res = requests.get("https://www.anyang.ac.kr/main/activities/school-cafeteria.do")

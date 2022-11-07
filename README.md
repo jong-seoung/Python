@@ -6,17 +6,14 @@ python 공부를 한 내용을 정리한 레파지토리 입니다.
 
 <br>
 
-# 기본 코드
+# [basic _code](https://github.com/jong-seoung/Python/tree/main/Basic_Code)
 파이썬의 기본적인 코드들을 공부한 내용입니다.
-### [기본 코드](https://github.com/jong-seoung/Python/tree/main/Basic_Code)
 
 <br>
 
-# 게임개발 
+# [PyGame_code](https://github.com/jong-seoung/Python/tree/main/GameDevelopment)
 파이썬을 이용하여 게임을 만드는 기본 코드들과 똥피하기 게임, 팡 게임을 만든 내용입니다
-### [게임 개발 기본 코드 ](https://github.com/jong-seoung/Python/tree/main/GameDevelopment/pygame_basic)
-### [똥 피하기 게임](https://github.com/jong-seoung/Python/tree/main/GameDevelopment/Quiz_ddong)
-### [팡 게임](https://github.com/jong-seoung/Python/tree/main/GameDevelopment/Pang_Game)
+
 
 
 <br>
